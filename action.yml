@@ -1,0 +1,12 @@
+name: 'Print String using Docker and Python'
+description: 'A GitHub Action to print a passed string using Docker and Python'
+inputs:
+  message:
+    description: 'The string message to print'
+    required: true
+    default: 'Hello from the custom action!'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    MESSAGE: ${{ inputs.message }}
