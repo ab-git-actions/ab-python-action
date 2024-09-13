@@ -1,0 +1,24 @@
+name: Release github action
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch: # Allow manual triggers
+
+permissions:
+  contents: write
+
+jobs:
+  release-github-action:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: Release create tag github action
+        id: release_step
+        uses: ab-git-actions/github-release@0.0.2  # This uses the local action defined in the repository
+        with:
+         github_token: '${{ secrets.GH_TOKEN }}'
