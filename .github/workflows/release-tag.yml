@@ -19,5 +19,5 @@ jobs:
       - name: Release create tag github action
         id: release_step
         uses: ab-git-actions/github-release@0.0.4  # This uses the local action defined in the repository
-        # with:
-        #  github_token: '${{ secrets.GH_TOKEN }}'
+        with:
+         github_token: '${{ secrets.GH_TOKEN }}'
