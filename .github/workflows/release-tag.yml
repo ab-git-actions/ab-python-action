@@ -12,7 +12,10 @@ permissions:
 jobs:
   release-github-action:
     runs-on: ubuntu-latest
-    steps:        
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
       - name: Release create tag github action
         id: release_step
         uses: ab-git-actions/github-release@0.0.4  # This uses the local action defined in the repository
