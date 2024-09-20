@@ -1,9 +1,9 @@
 name: Release github action
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
+    types:
+      - closed
   workflow_dispatch: # Allow manual triggers
 
 permissions:
