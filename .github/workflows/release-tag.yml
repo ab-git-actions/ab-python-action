@@ -25,5 +25,3 @@ jobs:
         uses: ab-git-actions/gh-release@main  # This uses the local action defined in the repository
         with:
          github_token: '${{ secrets.GH_TOKEN }}'
-        env:
-         GH_TOKEN: '${{ secrets.GH_TOKEN }}'
